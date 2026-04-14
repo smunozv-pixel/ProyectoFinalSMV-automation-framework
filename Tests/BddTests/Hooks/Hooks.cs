@@ -28,10 +28,9 @@ public class Hooks(ScenarioContext scenarioContext)
         {
             try
             {
-                // Captura siempre al final del test
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
 
-                // Carpeta "Screenshots" en la raíz del proyecto
+                
                 var projectRoot = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
                 var screenshotsDir = Path.Combine(projectRoot, "Screenshots");
 
@@ -40,20 +39,20 @@ public class Hooks(ScenarioContext scenarioContext)
                     Directory.CreateDirectory(screenshotsDir);
                 }
 
-                // Nombre de archivo con timestamp
+                
                 var rawName = TestContext.CurrentContext.Test.Name;
                 var safeName = Regex.Replace(rawName, @"[^a-zA-Z0-9_-]", "_");
 
-                // Añadir un GUID corto para evitar duplicados
+                
                 var uniqueId = Guid.NewGuid().ToString("N").Substring(0, 6);
 
                 var fileName = $"{safeName}_{DateTime.Now:yyyyMMdd_HHmmss}_{uniqueId}.png";
                 var filePath = Path.Combine(screenshotsDir, fileName);
 
-                // Guardar como PNG
+                
                 File.WriteAllBytes(filePath, screenshot.AsByteArray);
 
-                // Adjuntar al reporte de NUnit
+            
                 TestContext.AddTestAttachment(filePath, "Screenshot del test");
 
                 Console.WriteLine($"Screenshot guardado y adjuntado: {Path.GetFullPath(filePath)}");

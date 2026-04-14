@@ -38,7 +38,7 @@ public class ProductsPage
         var addButtonId = $"add-to-cart-{productId}";
         var removeButtonId = $"remove-{productId}";
 
-        // Verifica si existe el botón Add
+     
         var addButtons = driver.FindElements(By.Id(addButtonId));
         if (addButtons.Any())
         {
@@ -47,7 +47,7 @@ public class ProductsPage
         }
         else
         {
-            // Si no existe Add, puede que ya esté en el carrito
+            
             var removeButtons = driver.FindElements(By.Id(removeButtonId));
             if (removeButtons.Any())
             {
@@ -81,13 +81,13 @@ public class ProductsPage
 
     public void ClearCart()
     {
-        // Ir al carrito
+       
         GoToCart();
 
-        // Esperar a que cargue el contenedor del carrito (aunque esté vacío)
+        
         wait.Until(ExpectedConditions.ElementIsVisible(By.Id("cart_contents_container")));
 
-        // Buscar botones "Remove"
+        
         var removeButtons = driver.FindElements(By.XPath("//button[text()='Remove']"));
         if (removeButtons.Count == 0)
         {
@@ -101,7 +101,6 @@ public class ProductsPage
                 Console.WriteLine("Clicked " + btn.Text);
             }
 
-            // Esperar hasta que el badge desaparezca o sea 0
             wait.Until(d =>
             {
                 var elements = d.FindElements(cartBadge);
@@ -111,7 +110,7 @@ public class ProductsPage
             Console.WriteLine("Carrito vaciado. GetCartCount() -> " + GetCartCount());
         }
 
-        // Volver al inventario
+    
         driver.Navigate().GoToUrl("https://www.saucedemo.com/inventory.html");
     }
 
@@ -146,13 +145,13 @@ public class ProductsPage
         element.Click();
         Console.WriteLine("Navigated to cart.");
 
-        // Espera a que cargue el contenedor del carrito (aunque esté vacío)
+       
         wait.Until(ExpectedConditions.ElementIsVisible(By.Id("cart_contents_container")));
     }
 
     public void SelectSortOption(string optionText)
     {
-        // El dropdown de ordenamiento en SauceDemo tiene id "product_sort_container"
+        
         var sortDropdown = driver.FindElement(By.CssSelector("select.product_sort_container"));
         var selectElement = new SelectElement(sortDropdown);
         selectElement.SelectByText(optionText);
@@ -161,7 +160,7 @@ public class ProductsPage
 
     public List<decimal> GetAllProductPrices()
     {
-        // Los precios están en elementos con clase "inventory_item_price"
+        
         var priceElements = driver.FindElements(By.CssSelector(".inventory_item_price"));
         var prices = priceElements
             .Select(e => Decimal.Parse(e.Text.Replace("$", ""), CultureInfo.InvariantCulture))

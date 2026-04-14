@@ -24,7 +24,7 @@ public class CartPage
 
     public void Checkout()
     {
-        GoToCart(); // asegurarse de estar en el carrito
+        GoToCart(); 
         wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("checkout"))).Click();
     }
 

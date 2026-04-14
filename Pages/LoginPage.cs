@@ -45,7 +45,7 @@ public class LoginPage
 
     public bool IsLoginSuccessful()
     {
-        // Verifica si aparece el contenedor de inventario después del login
+
         return driver.FindElements(By.Id("inventory_container")).Count > 0;
     }
 

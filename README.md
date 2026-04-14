@@ -1,11 +1,27 @@
 ﻿ProyectoFinalSMV – Documentación
 
 # Configuración
-- Dependencias instaladas
-- .NET 10.0 SDK
-- Selenium WebDriver
-- SeleniumExtras.WaitHelpers
+
+## Requisitos previos
+- .NET 6 SDK o superior
 - NUnit
+- Selenium WebDriver
+- Navegador compatible (Chrome recomendado)
+- Git instalado
+
+##  Instalación
+1. Clonar el repositorio:
+   bash git clone https://github.com/smunozv-pixel/ProyectoFinalSMV-automation-framework.git
+2. Entrar al directorio:
+cd ProyectoFinalSMV-automation-framework
+3. Restaurar dependencias:
+dotnet restore
+4. Ejecutar las pruebas:
+dotnet test
+4.1. Para pruebas API:
+dotnet test ProyectoFinalSMV.ApiTests
+4.2. Para pruebas Web
+dotnet test ProyectoFinalSMV.WebTests
 
 # Desarrollo del Proyecto
 

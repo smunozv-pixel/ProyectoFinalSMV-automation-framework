@@ -8,14 +8,13 @@ public class CheckoutPage
     private readonly IWebDriver driver;
     private readonly WebDriverWait wait;
 
-    // Selectores de los campos del formulario
+  
     private readonly By firstNameField = By.Id("first-name");
     private readonly By lastNameField = By.Id("last-name");
     private readonly By postalCodeField = By.Id("postal-code");
     private readonly By continueButton = By.Id("continue");
     private readonly By finishButton = By.Id("finish");
 
-    // Selectores del resumen y confirmación
     private readonly By summaryTotalLabel = By.CssSelector(".summary_total_label");
     private readonly By orderCompleteHeader = By.CssSelector(".complete-header");
 
@@ -32,7 +31,6 @@ public class CheckoutPage
     }
 
 
-    // 5.Completar checkout exitoso con datos válidos (data-driven con JSON).
     public void FillFormFromJson(string jsonFilePath)
     {
         var jsonData = File.ReadAllText(Path.Combine("TestData", jsonFilePath));
@@ -45,17 +43,17 @@ public class CheckoutPage
 
     public bool IsErrorMessageDisplayed()
     {
-        // En SauceDemo, los errores de checkout aparecen en un <h3> con data-test="error"
+       
         var errors = driver.FindElements(By.CssSelector("h3[data-test='error']"));
         return errors.Any();
     }
-    // Continuar al resumen
+    
     public void Continue()
     {
         driver.FindElement(continueButton).Click();
     }
 
-    // Validar que el resumen se muestre
+    
     public bool IsSummaryDisplayed()
     {
         try
@@ -69,7 +67,7 @@ public class CheckoutPage
         }
     }
 
-    // Método combinado: continuar y validar resumen
+
     public bool GoToOverviewAndValidate()
     {
         Continue();
@@ -77,13 +75,13 @@ public class CheckoutPage
         return IsSummaryDisplayed();
     }
 
-    // Finalizar la compra
+
     public void Finish()
     {
         driver.FindElement(finishButton).Click();
     }
 
-    // Validar que la orden se completó
+
     public bool IsOrderComplete()
     {
         try
@@ -101,7 +99,7 @@ public class CheckoutPage
 
     private readonly By errorMessage = By.CssSelector("h3[data-test='error']");
 
-    //6. Intentar checkout con datos incompletos y validar error.
+
     public string GetCheckoutErrorMessage()
     {
         try

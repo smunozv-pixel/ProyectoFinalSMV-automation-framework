@@ -11,12 +11,12 @@ namespace ProyectoFinalSMV.ApisTest.TestsData
         [Test]
         public async Task Put_UpdatePost_Should_Return_OK()
         {
-            var client = ApiRequests.GetClient();   // Cliente
+            var client = ApiRequests.GetClient();   
             var request = ApiRequests.UpdatePost(1, "Título actualizado", "Contenido actualizado", 1); // Request
 
-            var response = await client.ExecuteAsync(request); // Ejecutar
+            var response = await client.ExecuteAsync(request); 
 
-            ApiAssertions.AssertPostUpdated(response, "Título actualizado"); // Validar
+            ApiAssertions.AssertPostUpdated(response, "Título actualizado"); 
             EvidenceHelper.SaveJson(response, "PUT_UpdatePost");
 
         }

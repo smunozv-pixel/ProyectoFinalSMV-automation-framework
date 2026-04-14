@@ -8,20 +8,20 @@ using System;
         {
             var options = new ChromeOptions();
 
-            // Desactiva el gestor de contraseñas y el aviso de contraseñas inseguras
+      
             options.AddUserProfilePreference("credentials_enable_service", false);
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
 
-            // Evita la burbuja de "guardar contraseña"
+      
             options.AddArgument("--disable-save-password-bubble");
 
-            // Opcional: usar modo incógnito para un perfil limpio
+          
             options.AddArgument("--incognito");
 
-            // Opcional: maximizar ventana al iniciar
+          
             options.AddArgument("--start-maximized");
 
-            // Inicializa el driver con las opciones configuradas
+ 
             IWebDriver driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
 

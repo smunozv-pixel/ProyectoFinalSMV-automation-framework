@@ -21,14 +21,14 @@ public class CompraSteps
     [Given(@"que estoy en la página de login")]
     public void DadoQueEstoyEnLaPaginaDeLogin()
     {
-        loginPage = new LoginPage(driver); // inicializar primero
+        loginPage = new LoginPage(driver); 
         loginPage.NavigateToLoginPage("https://www.saucedemo.com/");
     }
 
     [When(@"inicio sesión con usuario ""(.*)"" y contraseña ""(.*)""")]
     public void CuandoInicioSesion(string usuario, string contraseña)
     {
-        productsPage = new ProductsPage(driver); // inicializar aquí
+        productsPage = new ProductsPage(driver); 
         loginPage.Login(usuario, contraseña);
 
 
@@ -56,14 +56,14 @@ public class CompraSteps
     [When(@"procedo al checkout con datos ""(.*)"", ""(.*)"", ""(.*)""")]
     public void CuandoProcedoCheckout(string nombre, string apellido, string codigoPostal)
     {
-        cartPage.Checkout(); // entra al carrito y hace clic en checkout
+        cartPage.Checkout(); 
         checkoutPage = new CheckoutPage(driver);
 
         checkoutPage.FillForm(nombre, apellido, codigoPostal);
-        checkoutPage.Continue(); // avanzar al resumen
+        checkoutPage.Continue(); 
         Assert.That(checkoutPage.IsSummaryDisplayed(), Is.True, "El resumen no se mostró correctamente");
 
-        checkoutPage.Finish(); // finalizar la compra
+        checkoutPage.Finish(); 
     }
 
     [Then(@"debería ver el mensaje de confirmación ""(.*)""")]
