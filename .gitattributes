@@ -1,0 +1,3 @@
+*.cs     text eol=crlf
+*.feature text eol=lf
+*.js     text eol=lf
