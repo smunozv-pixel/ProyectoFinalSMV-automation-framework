@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.log
+*.tmp
+
+# Reportes y evidencias
+Reports/TestReport.html
+Screenshots/
+
+# Archivos de configuración locales
+appsettings.Development.json
