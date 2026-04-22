@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Visual Studio
 .vs/
 bin/
@@ -13,3 +14,22 @@ Screenshots/
 
 # Archivos de configuración locales
 appsettings.Development.json
+=======
+# Archivos y carpetas de Visual Studio
+.vs/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Binarios y builds
+bin/
+obj/
+Debug/
+Release/
+
+# Archivos temporales
+*.log
+*.tmp
+>>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4

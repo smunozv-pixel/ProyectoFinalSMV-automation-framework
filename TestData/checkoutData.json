@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 {
     "firstName": "Silvia",
     "lastName": "Muñoz",
     "postalCode": "50601"
+=======
+{
+    "firstName": "Silvia",
+    "lastName": "Muñoz",
+    "postalCode": "50601"
+>>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
 }

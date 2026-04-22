@@ -7,14 +7,20 @@
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
 		<GenerateReqnrollCodeBehind>true</GenerateReqnrollCodeBehind>
+<<<<<<< HEAD
 		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+=======
+>>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="coverlet.collector" Version="8.0.1" PrivateAssets="all" />
 		<PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+<<<<<<< HEAD
 		<PackageReference Include="ExtentReports" Version="5.0.4" />
+=======
+>>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
 		<PackageReference Include="NUnit" Version="4.5.1" />
 		<PackageReference Include="NUnit.Analyzers" Version="4.12.0" PrivateAssets="all" />
