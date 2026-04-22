@@ -1,35 +1,34 @@
-<<<<<<< HEAD
 # Visual Studio
 .vs/
-bin/
-obj/
-*.user
-*.suo
-*.log
-*.tmp
-
-# Reportes y evidencias
-Reports/TestReport.html
-Screenshots/
-
-# Archivos de configuración locales
-appsettings.Development.json
-=======
-# Archivos y carpetas de Visual Studio
-.vs/
-*.vsidx
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# Binarios y builds
+# Archivos de solución
+*.slnx
+*.sln
+
+# Compilación
 bin/
 obj/
 Debug/
 Release/
 
-# Archivos temporales
+# Reportes y evidencias
+Reports/
+Screenshots/
+Evidence/
+
+# Archivos de configuración locales
+appsettings.Development.json
+appsettings.Local.json
+
+# Logs
 *.log
+
+# Archivos temporales
 *.tmp
->>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
+*.temp
+*.bak
+*.swp

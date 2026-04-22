@@ -11,11 +11,7 @@ namespace ProyectoFinalSMV.ApisTest.Utilities
             Assert.That(response.StatusCode, Is.EqualTo(System.Net.HttpStatusCode.OK),
                 "El GET de usuarios no devolvió 200 OK");
 
-<<<<<<< HEAD
-            // Validar que el contenido tenga al menos un usuario
-=======
-           
->>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
+
             var json = JArray.Parse(response.Content ?? "[]");
             Assert.That(json.Count, Is.GreaterThan(0), "La lista de usuarios está vacía");
         }

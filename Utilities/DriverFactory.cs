@@ -8,7 +8,7 @@ using System;
         {
             var options = new ChromeOptions();
 
-<<<<<<< HEAD
+
             // Desactiva el gestor de contraseñas y el aviso de contraseñas inseguras
             options.AddUserProfilePreference("credentials_enable_service", false);
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
@@ -23,7 +23,7 @@ using System;
             options.AddArgument("--start-maximized");
 
             // Inicializa el driver con las opciones configuradas
-=======
+
       
             options.AddUserProfilePreference("credentials_enable_service", false);
             options.AddUserProfilePreference("profile.password_manager_enabled", false);
@@ -38,7 +38,7 @@ using System;
             options.AddArgument("--start-maximized");
 
  
->>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
+
             IWebDriver driver = new ChromeDriver(options);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
 

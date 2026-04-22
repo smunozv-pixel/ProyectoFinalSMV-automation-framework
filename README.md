@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿ProyectoFinalSMV – Documentación
 
 # Configuración
@@ -563,14 +562,26 @@ Se deben implementar pruebas CRUD contra una API pública:
 - PUT → actualización de recurso.
 - DELETE → eliminación de recurso
 
-# Evidencias
+# Evidencias y reportes
 
-- API Tests → carpeta Evidence/ (logs y resultados).
-- Web Tests → carpeta Screenshots/ (capturas automáticas en fallos).
-
-
-
+-Los reportes se guardan en la carpeta fija del proyecto: ProyectoFinalSMV/Reports/TestReport.html
+- Las capturas de pantalla asociadas se guardan en: ProyectoFinalSMV/Screenshots/
+- La evidencias de los API Tests se guardan en la carpeta Evidence/ (logs y resultados).
 
 
+		# El archivo TestReport.html incluye:
 
->>>>>>> e8c7dd8bb42ff9b5a23c779e0e0029d116e3d4a4
+-Resumen inicial con cantidad de pruebas pasadas y fallidas.
+-Detalle por escenario con pasos ejecutados y su estado.
+-Capturas de pantalla incrustadas en los pasos fallidos.
+-Tiempos de ejecución por prueba.
+
+# Implementacion del .gitignore
+
+-Mantener el repositorio limpio → evita que se suban archivos temporales, binarios o basura que no aportan 
+valor.
+-Reducir errores → previene conflictos al subir archivos que cambian constantemente (ej. bin/, obj/, .vs/).
+-Proteger configuraciones locales → no expone credenciales o configuraciones específicas de la máquina 
+(appsettings.Development.json).
+-Optimizar el flujo de trabajo → solo se versiona el código fuente y los archivos realmente necesarios para 
+compilar y ejecutar.
